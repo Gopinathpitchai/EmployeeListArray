@@ -4,7 +4,7 @@ import java.util.*;
 
 public class ListSample {
     public static void main(String [] args){
-        List<Employee>employeeList=new ArrayList<>();
+        List<Employee>employeeList=new ArrayList<>(50);
 
         Employee employee_1 = new Employee(1,"Gopinath",2000);
         Employee employee_2 = new Employee(2,"Siva",2000);
@@ -95,19 +95,51 @@ public class ListSample {
         //Compare Two ArrayLists
         System.out.println("employeeList.equals(employeeList2): "+employeeList.equals(employeeList2));
 
+        //Swap ArrayList Elements
 
+        System.out.println("Before Swaping:"+employeeList);
+        Collections.swap(employeeList,2,1);
+        System.out.println("After Swaping:"+employeeList);
 
-        System.out.println("Size of the list...." + employeeList.size());
+        //Join Two ArrayLists
+        employeeList.addAll(employeeList2);
+        System.out.println("Join Two arraylist:"+employee1);
 
+        //Clone ArrayList
+        ArrayList<Employee> cloneList = new ArrayList<>(employeeList);
+        System.out.println("Clone Array :"+cloneList);
 
-//        System.out.println(employeeList.get(5));
+        //Clear ArrayList
+        employeeList.clear();
+        System.out.println("After Clearing ArrayList:"+employeeList);
 
+        //Check if ArrayList is Empty
+        System.out.println("Is the employee ArrayList is Empty :"+ employeeList.isEmpty());
 
+        //Trim ArrayList Capacity
+        System.out.println("capacity:"+employeeList.toArray().length);
 
+        // Replace Second Element
+        employeeList.set(1, new Employee(9, "Kokila", 2000));
 
-        for (Employee employee:employeeList){
-            System.out.println(employee);
+        //Print Elements by Position
+        for (int i = 0; i < employeeList.size(); i++) {
+            System.out.println("Element at Index  "+i +": "+employeeList.get(i));
+
         }
+
+
+//        System.out.println("Size of the list...." + employeeList.size());
+//
+//
+////        System.out.println(employeeList.get(5));
+//
+//
+//
+//
+//        for (Employee employee:employeeList){
+//            System.out.println(employee);
+//        }
 
 
     }
